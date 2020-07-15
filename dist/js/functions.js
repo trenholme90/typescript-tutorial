@@ -22,3 +22,4 @@ console.log(combinedValues(8, 9));
 addAndHandle(10, 20, function (result) {
     console.log(result);
 });
+//# sourceMappingURL=functions.js.map

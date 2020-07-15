@@ -15,3 +15,4 @@ function generateError(msg, code) {
 var result = generateError("An error occured", 500);
 // As error is thrown it crashes script so doesn't even return undefined like a void function would.
 console.log(result);
+//# sourceMappingURL=unknownNeverType.js.map

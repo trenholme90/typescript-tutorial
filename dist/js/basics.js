@@ -14,3 +14,4 @@ var num2 = 10.5;
 var prntResult = true;
 var res = "Result is: ";
 addNum(num1, num2, prntResult, res);
+//# sourceMappingURL=basics.js.map
