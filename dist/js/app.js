@@ -1,29 +1,14 @@
-"use strict";
-var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
-    Invoice.prototype.format = function () {
-        return this.client + " owes \u00A3" + this.amount + " for " + this.details;
-    };
-    return Invoice;
-}());
-var inv1 = new Invoice("Mario", "Work on Mario Website", 250);
-var inv2 = new Invoice("Luigi", "Work on Luigi Website", 300);
-var invoices = [];
-invoices.push(inv1, inv2);
-console.log(invoices);
-invoices.forEach(function (inv) {
-    console.log(inv.client, inv.amount, inv.format());
-});
-var form = document.querySelector("form");
-var emailInput = document.querySelector("#exampleEmailInput");
-var recipientInput = document.querySelector("#exampleRecipientInput");
-var messageInput = document.querySelector("#exampleMessage");
-form.addEventListener("submit", function (e) {
+import { CustomerQuery } from "./classes/customerQuery.js";
+import { ListTemplate } from "./classes/list.js";
+const form = document.querySelector("form");
+const emailInput = document.querySelector("#exampleEmailInput");
+const reasonInput = document.querySelector("#exampleReasonInput");
+const messageInput = document.querySelector("#exampleMessage");
+const container = document.querySelector(".container");
+form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log(emailInput.value, recipientInput.value, messageInput.value);
+    const query = new CustomerQuery(emailInput.value, reasonInput.value, messageInput.value);
+    const list = new ListTemplate(container);
+    list.render(query, query.reason, "end");
 });
 //# sourceMappingURL=app.js.map
